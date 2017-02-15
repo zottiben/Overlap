@@ -1,0 +1,139 @@
+{
+    "appKeys": {
+        "KEY_SETTING_TIME_COLOR": 6,
+        "KEY_SETTING_TIME_BG_COLOR": 7,
+        "KEY_SETTING_LANGUAGE_ID": 8,
+        "KEY_SETTING_LEADING_ZERO": 9,
+        "KEY_SETTING_MERIDIAN": 10,
+        "KEY_SETTING_SIZE_INCREASE": 11,
+        "KEY_SETTING_BLINK": 12
+    },
+    "capabilities": [
+        "configurable"
+    ],
+    "companyName": "benpzotti",
+    "longName": "Overlap",
+    "projectType": "native",
+    "resources": {
+        "media": [
+            {
+              "menuIcon": true,
+              "type": "bitmap",
+              "name": "MENU_ICON",
+              "file": "images/numbers/menu-icon.png"
+            },
+            {
+                "file": "images/numbers/0.png",
+                "name": "CLOCK_NUMBER_0",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/1.png",
+                "name": "CLOCK_NUMBER_1",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/2.png",
+                "name": "CLOCK_NUMBER_2",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/3.png",
+                "name": "CLOCK_NUMBER_3",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/4.png",
+                "name": "CLOCK_NUMBER_4",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/5.png",
+                "name": "CLOCK_NUMBER_5",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/6.png",
+                "name": "CLOCK_NUMBER_6",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/7.png",
+                "name": "CLOCK_NUMBER_7",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/8.png",
+                "name": "CLOCK_NUMBER_8",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/9.png",
+                "name": "CLOCK_NUMBER_9",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/0_large.png",
+                "name": "CLOCK_NUMBER_LARGE_0",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/1_large.png",
+                "name": "CLOCK_NUMBER_LARGE_1",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/2_large.png",
+                "name": "CLOCK_NUMBER_LARGE_2",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/3_large.png",
+                "name": "CLOCK_NUMBER_LARGE_3",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/4_large.png",
+                "name": "CLOCK_NUMBER_LARGE_4",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/5_large.png",
+                "name": "CLOCK_NUMBER_LARGE_5",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/6_large.png",
+                "name": "CLOCK_NUMBER_LARGE_6",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/7_large.png",
+                "name": "CLOCK_NUMBER_LARGE_7",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/8_large.png",
+                "name": "CLOCK_NUMBER_LARGE_8",
+                "type": "bitmap"
+            },
+            {
+                "file": "images/numbers/9_large.png",
+                "name": "CLOCK_NUMBER_LARGE_9",
+                "type": "bitmap"
+            }
+        ]
+    },
+    "sdkVersion": "3",
+    "shortName": "Overlap",
+    "targetPlatforms": [
+        "aplite",
+        "basalt",
+        "chalk"
+    ],
+    "uuid": "3aeabad6-9556-42c2-bdcc-1e579baf5bba",
+    "versionLabel": "2.0",
+    "watchapp": {
+        "watchface": true
+    }
+}

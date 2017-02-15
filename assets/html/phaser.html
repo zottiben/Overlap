@@ -1,0 +1,338 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Overlap Settings</title>
+        <link type="text/css" href="slate.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+        
+        <style>
+            .item-container-content { width: 100%; overflow-x: scroll; overflow-y: hidden; }
+            .preset-container { width: 1150px; margin: 0 auto; padding: 1rem 1rem; }
+            .preset { width: 10.666667%; margin-right: 1%; display: inline-block; vertical-align: middle; opacity: .4; }
+            .preset img { width: 100%; }
+            .current { opacity: 1; }
+            
+        </style>
+        
+    </head>
+    <body>
+        <div class="item-container" style="text-align: center;">
+        <h1 class="title">Overlap <i class="fa fa-cog fa-spin"></i></h1>
+        <span style="margin-left: -4.9%; color: rgba(0,0,0,0.1); position: absolute; right: 0; margin-right: 2%; top: 0; font-size: 11px;">Version 1.7</span>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-container-content">
+                <div class="item">
+                    Use this settings page to configure Overlap
+                </div>
+            </div>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-container-header">
+                Watchface Presets
+            </div>
+            <div class="item-container-content">
+                <div class="preset-container">
+                    <div id="1" class="preset current">
+                        <img src="images/screenshot1.png" alt=""/>
+                    </div>
+                    <div id="2" class="preset current">
+                        <img src="images/screenshot2.png" alt=""/>
+                    </div>
+                    <div id="3" class="preset current">
+                        <img src="images/screenshot3.png" alt=""/>
+                    </div>
+                    <div id="4" class="preset current">
+                        <img src="images/screenshot4.png" alt=""/>
+                    </div>
+                    <div id="5" class="preset current">
+                        <img src="images/screenshot5.png" alt=""/>
+                    </div>
+                    <div id="6" class="preset current">
+                        <img src="images/screenshot6.png" alt=""/>
+                    </div>
+                    <div id="7" class="preset current">
+                        <img src="images/screenshot7.png" alt=""/>
+                    </div>
+                    <div id="8" class="preset current">
+                        <img src="images/screenshot8.png" alt=""/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="item-container">
+            <div class="item-container-header">
+                Watchface Colors
+            </div>
+            <div class="item-container-content">
+                <label class="item">
+                    Text Color
+                    <input type="text" id="timeColor" class="item-color item-color-normal" value="#000000">
+                </label>
+                <label class="item">
+                    Background Color
+                    <input type="text" id="timeBgColor" class="item-color item-color-normal" value="#000000">
+                </label>
+            </div>
+            <br />
+<!--
+            <div class="item-container-header">
+                Watchface Format
+            </div>
+            <div class="item-container-content">
+                <label class="item">
+                    24 Hour Format
+                    <input type="checkbox" id="isMeridian" class="item-checkbox">
+                </label>
+            </div>
+-->
+
+            <div class="item-container-header">
+                Watchface Settings
+            </div>
+            <div class="item-container-content">
+                <label class="item">
+                    Show Leading Zero
+                    <input type="checkbox" id="leadingZero" class="item-checkbox">
+                </label>
+                <label class="item">
+                    Show AM/PM
+                    <input type="checkbox" id="meridian" class="item-checkbox">
+                </label>
+                <label class="item">
+                    Larger Numbers
+                    <input type="checkbox" id="sizeIncrease" class="item-checkbox">
+                </label>
+                <label class="item blink-ampm" style="display: none;">
+                Blink AM/PM <span style="opacity: .5; font-size: 12px; display: inline-block; vertical-align: bottom;">(Large Numbers Only)</span>
+                    <input type="checkbox" id="blink" class="item-checkbox">
+                </label>
+            </div>
+            <p style="margin-bottom: 2.5rem">&nbsp;</p>
+            <div class="item-container-footer">
+                <div class="button-container">
+                    <input id="submitButton" type="button" class="item-button" value="SAVE">
+                </div>
+            </div>
+        </div>
+        <script src="slate.min.js"></script>
+        <script>
+            $(document).ready(function() {
+            var $timeColor = $('#timeColor');
+            var $timeBgColor = $('#timeBgColor');
+            var $leadingZero = $('#leadingZero');
+            var $meridian = $('#meridian');
+            var $sizeIncrease = $('#sizeIncrease');
+            var $blink = $('#blink');
+            var $submitButton = $('#submitButton');
+            var $currentId;
+            
+            $('.preset').click(function(e) {
+                 $currentId = $(this).attr('id');
+                 var $prevId = $currentId;
+                 $('.preset').removeClass('current');
+                 $(this).addClass('current');
+                 if($currentId == 1) {
+                 
+                    $timeColor[0].value = '0xFFFFFF';
+                    $timeBgColor[0].value = '0x0055FF';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = false;
+                    $blink[0].checked = false;
+                    
+                 } else if($currentId== 2) {
+                 
+                    $timeColor[0].value = '0x00FF00';
+                    $timeBgColor[0].value = '0x000000';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = true;
+                    $blink[0].checked = true;
+                    
+                 } else if($currentId == 3) {
+                    
+                    $timeColor[0].value = '0xFF0000';
+                    $timeBgColor[0].value = '0xFFFFFF';
+                    $leadingZero[0].checked = false;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = false;
+                    $blink[0].checked = false;
+                    
+                 } else if($currentId == 4) {
+                    
+                    $timeColor[0].value = '0xFF5500';
+                    $timeBgColor[0].value = '0xFF0000';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = false;
+                    $blink[0].checked = false;
+                    
+                 } else if($currentId == 5) {
+                    
+                    $timeColor[0].value = '0xFFFFFF';
+                    $timeBgColor[0].value = '0xFF0000';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = true;
+                    $blink[0].checked = false;
+                    
+                 } else if($currentId == 6) {
+                    
+                    $timeColor[0].value = '0x550000';
+                    $timeBgColor[0].value = '0x0055FF';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = false;
+                    $sizeIncrease[0].checked = true;
+                    $blink[0].checked = false;
+                    
+                 } else if($currentId == 7) {
+                    
+                    $timeColor[0].value = '0x000000';
+                    $timeBgColor[0].value = '0x00FF00';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = false;
+                    $blink[0].checked = false;
+                    
+                 } else if($currentId == 8) {
+                    
+                    $timeColor[0].value = '0xFFFF00';
+                    $timeBgColor[0].value = '0xAA00AA';
+                    $leadingZero[0].checked = true;
+                    $meridian[0].checked = true;
+                    $sizeIncrease[0].checked = false;
+                    $blink[0].checked = false;
+                    
+                 }
+                 
+                 
+                 console.log('Submit');
+                 var return_to = getQueryParam('return_to', 'pebblejs://close#');
+                 document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigDataPreset()));
+                 
+                 function getAndStoreConfigDataPreset() {
+                
+                    var options = {
+                        timeColor: $timeColor.val(),
+                        timeBgColor: $timeBgColor.val(),
+                        leadingZero: $leadingZero[0].checked,
+                        meridian: $meridian[0].checked,
+                        sizeIncrease: $sizeIncrease[0].checked,
+                        blink: $blink[0].checked
+                    };
+
+                    localStorage.timeColor = options.timeColor;
+                    localStorage.timeBgColor = options.timeBgColor;
+                    localStorage.leadingZero = options.leadingZero;
+                    localStorage.meridian = options.meridian;
+                    localStorage.sizeIncrease = options.sizeIncrease;
+                    localStorage.blink = options.blink;
+
+                    console.log('Got Options: ' + JSON.stringify(options));
+                    return options;
+                }
+            });
+            
+            
+            
+            
+                var $sizeIncrease = $('#sizeIncrease');
+                var $showMeridian = $('#meridian');
+                
+                if($($sizeIncrease).is(':checked') && $($showMeridian).is(':checked')) {
+                    $('.blink-ampm').show();
+                } else {
+                    $('.blink-ampm').hide();
+                }
+                $sizeIncrease.add($showMeridian).click(function() {
+                    if($($sizeIncrease).is(':checked') && $($showMeridian).is(':checked')) {
+                        $('.blink-ampm').show();
+                    } else {
+                        $('.blink-ampm').hide();
+                    }
+                });
+            });
+            
+            
+            
+            (function() {
+                loadOptions();
+                submitHandler();
+            })();
+        
+        
+            function submitHandler() {
+                var $submitButton = $('#submitButton');
+                
+                $submitButton.on('click', function() {
+                    console.log('Submit');
+                    
+                    var return_to = getQueryParam('return_to', 'pebblejs://close#');
+                    document.location = return_to + encodeURIComponent(JSON.stringify(getAndStoreConfigData()));
+                });
+            }
+            
+            function loadOptions() {
+                var $timeColor = $('#timeColor');
+                var $timeBgColor = $('#timeBgColor');
+                var $leadingZero = $('#leadingZero');
+                var $meridian = $('#meridian');
+                var $sizeIncrease = $('#sizeIncrease');
+                var $blink = $('#blink');
+                
+                    $timeColor[0].value = localStorage.timeColor;
+                    $timeBgColor[0].value = localStorage.timeBgColor;
+                    $leadingZero[0].checked = localStorage.leadingZero === 'true';
+                    $meridian[0].checked = localStorage.meridian === 'true';
+                    $sizeIncrease[0].checked = localStorage.sizeIncrease == 'true';
+                    $blink[0].checked = localStorage.blink == 'true';
+            }
+            
+            function getAndStoreConfigData() {
+                var $timeColor = $('#timeColor');
+                var $timeBgColor = $('#timeBgColor');
+                var $leadingZero = $('#leadingZero');
+                var $meridian = $('#meridian');
+                var $sizeIncrease = $('#sizeIncrease');
+                var $blink = $('#blink');
+                
+                var options = {
+                    timeColor: $timeColor.val(),
+                    timeBgColor: $timeBgColor.val(),
+                    leadingZero: $leadingZero[0].checked,
+                    meridian: $meridian[0].checked,
+                    sizeIncrease: $sizeIncrease[0].checked,
+                    blink: $blink[0].checked
+                };
+                
+                localStorage.timeColor = options.timeColor;
+                localStorage.timeBgColor = options.timeBgColor;
+                localStorage.leadingZero = options.leadingZero;
+                localStorage.meridian = options.meridian;
+                localStorage.sizeIncrease = options.sizeIncrease;
+                localStorage.blink = options.blink;
+                
+                console.log('Got Options: ' + JSON.stringify(options));
+                return options;
+            }
+            
+            function getQueryParam(variable, defaultValue) {
+                var query = location.search.substring(1);
+                var vars = query.split('&');
+                for(var i = 0; i < vars.length; i++) {
+                    var pair = vars[i].split('=');
+                    if(pair[0] === variable) {
+                        return decodeURIComponent(pair[1]);
+                    }
+                }
+                return defaultValue || false;
+            }
+        </script>
+    </body>
+</html>
